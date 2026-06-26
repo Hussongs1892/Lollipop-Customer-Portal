@@ -1,0 +1,102 @@
+/* ============================================================
+   Lollipop — one-sheet poster system (manager resources)
+   A4 portrait · Poppins · DS tokens. Screen: sheet on a warm
+   grey desk. Print: one physical page per .poster.
+   ============================================================ */
+
+@page { size: A4; margin: 0; }
+html { background: #e7e4de; }
+body { background: #e7e4de; margin: 0; font-family: var(--font-brand, 'Poppins', sans-serif); color: var(--ink-800); }
+
+.posters { display: flex; flex-direction: column; align-items: center; gap: 30px; padding: 40px 16px 80px; }
+
+.poster {
+  width: 820px; min-height: 1160px; background: var(--cream);
+  position: relative; box-shadow: 0 8px 32px rgba(28,29,31,0.14); border-radius: 3px;
+  overflow: hidden; display: flex; flex-direction: column;
+}
+.poster .ptop { height: 10px; background: linear-gradient(90deg, var(--mood-terrible) 0 20%, var(--mood-bad) 20% 40%, var(--mood-okay) 40% 60%, var(--mood-good) 60% 80%, var(--mood-great) 80% 100%); }
+
+/* Header */
+.phdr { display: flex; align-items: center; gap: 22px; padding: 26px 46px; background: var(--coral-100); }
+.phdr.pink { background: #ffe6ea; }
+.phdr.peach { background: #ffe9d8; }
+.phdr img { height: 62px; width: auto; }
+.phdr h1 { font-size: 46px; font-weight: 800; letter-spacing: -0.025em; color: var(--ink-900); line-height: 1.0; }
+.phdr .sig { margin-left: auto; text-align: right; font-size: 24px; font-weight: 800; color: var(--blue-500); line-height: 1.1; }
+
+/* Body */
+.pbody { flex: 1; padding: 26px 46px 28px; display: flex; flex-direction: column; }
+
+/* Why it matters */
+.why { display: grid; grid-template-columns: 188px 1fr; gap: 26px; align-items: center; margin-bottom: 20px; }
+.why .wlbl { font-size: 42px; font-weight: 800; color: var(--ink-800); line-height: 0.98; letter-spacing: -0.02em; }
+.why .wbox { background: var(--butter, #FBEFC4); border-radius: 22px; padding: 20px 26px; font-size: 18.5px; line-height: 1.42; color: var(--ink-800); }
+.why .wbox p { margin: 0; }
+.why .wbox ul { list-style: none; margin: 8px 0 0; padding: 0; }
+.why .wbox li { position: relative; padding-left: 30px; margin-top: 5px; font-weight: 600; }
+.why .wbox li::before { content: "\2714"; position: absolute; left: 0; top: 0; color: #1f8a3b; font-weight: 800; }
+
+.ptitle { text-align: center; font-size: 36px; font-weight: 800; color: var(--ink-800); letter-spacing: -0.02em; margin: 6px 0 18px; }
+
+/* Icon tile / circle */
+.itile { width: 58px; height: 58px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: #fff; flex: none; }
+.itile.circ { border-radius: 50%; }
+.itile iconify-icon { font-size: 28px; }
+.t-coral { background: var(--coral-500); } .t-blue { background: var(--blue-500); }
+.t-amber { background: var(--mood-bad); } .t-green { background: #2fa24a; }
+.t-purple { background: #6b4fc0; } .t-pink { background: #ff5d8a; }
+.t-teal { background: #2bb3a3; } .t-ink { background: var(--ink-500); }
+
+/* ---- Sheet 1: Pitfalls table ---- */
+.ptbl { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line-300); }
+.ptbl th { font-size: 18px; font-weight: 800; color: var(--blue-700); text-align: left; padding: 16px 18px 12px; line-height: 1.2; vertical-align: bottom; }
+.ptbl td { padding: 16px 18px; vertical-align: top; font-size: 15px; line-height: 1.4; color: var(--ink-700); }
+.ptbl tbody tr:nth-child(odd) td { background: #fdeef0; }
+.ptbl tbody tr:nth-child(even) td { background: #e9f6ee; }
+.ptbl .who { display: flex; flex-direction: column; gap: 10px; }
+.ptbl .who b { font-size: 17px; font-weight: 800; color: var(--ink-900); line-height: 1.15; }
+.ptbl ul { list-style: none; margin: 0; padding: 0; }
+.ptbl ul li { position: relative; padding-left: 16px; margin-bottom: 6px; }
+.ptbl ul li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; border-radius: 50%; background: var(--ink-400); }
+.ptbl .try li::before { background: #2fa24a; }
+.ptbl .why-c { font-weight: 600; color: var(--ink-800); }
+
+/* ---- Sheet 2: Active listening rows ---- */
+.al { display: flex; flex-direction: column; gap: 14px; }
+.al-row { display: grid; grid-template-columns: 76px 1fr 1fr; gap: 0; border-radius: 16px; overflow: hidden; border: 1px solid var(--line-300); }
+.al-row .ic { display: flex; align-items: center; justify-content: center; background: #fff; }
+.al-row .left { background: #e9f6ee; padding: 18px 22px; }
+.al-row .right { background: #fdeef0; padding: 18px 22px; display: flex; flex-direction: column; justify-content: center; }
+.al-row .left h3 { font-size: 22px; font-weight: 800; color: var(--ink-900); margin: 0 0 5px; }
+.al-row .left p { font-size: 15.5px; line-height: 1.4; color: var(--ink-700); margin: 0; }
+.al-row .right ul { list-style: none; margin: 0; padding: 0; }
+.al-row .right li { position: relative; padding-left: 26px; margin-bottom: 6px; font-size: 15.5px; color: var(--ink-700); line-height: 1.35; }
+.al-row .right li::before { content: "\2714"; position: absolute; left: 0; top: 0; color: #1f8a3b; font-weight: 800; }
+.al-row .right .try { font-size: 15.5px; color: var(--ink-700); line-height: 1.4; }
+.al-row .right .try b { color: var(--ink-900); }
+.al-row .right .try i { color: var(--ink-600); }
+
+/* ---- Sheet 3: Body language grid ---- */
+.blgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.bl-item { display: flex; gap: 16px; align-items: flex-start; padding: 16px 18px; border-radius: 16px; }
+.bl-item.a { background: #e6f2fb; } .bl-item.b { background: #fdeef0; }
+.bl-item .ic { flex: none; }
+.bl-item h3 { font-size: 19px; font-weight: 800; color: var(--ink-900); margin: 0 0 6px; line-height: 1.1; }
+.bl-item p { font-size: 14px; line-height: 1.35; color: var(--ink-700); margin: 0 0 4px; }
+.bl-item p b { color: var(--ink-900); font-weight: 700; }
+
+/* Footer contact band */
+.pfoot-band { margin-top: 18px; background: var(--butter, #FBEFC4); padding: 12px 46px; display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+.pfoot-band .tryl { font-size: 21px; font-weight: 800; color: var(--ink-800); letter-spacing: -0.01em; }
+.pfoot-band .contacts { display: grid; grid-template-columns: auto auto; gap: 4px 26px; margin-left: auto; }
+.pfoot-band .ct { display: flex; align-items: center; gap: 8px; font-size: 13.5px; font-weight: 700; color: var(--ink-800); white-space: nowrap; }
+.pfoot-band .ct iconify-icon { color: var(--blue-500); font-size: 16px; }
+
+@media print {
+  html, body { background: #fff; }
+  *, *::before, *::after { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+  .posters { padding: 0; gap: 0; }
+  .poster { box-shadow: none; border-radius: 0; width: auto; min-height: 100vh; break-after: page; page-break-after: always; }
+  .poster:last-child { break-after: auto; }
+}

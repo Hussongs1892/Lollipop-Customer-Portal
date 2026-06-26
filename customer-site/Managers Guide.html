@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onboarding &amp; Best Practices — Lollipop</title>
+<link rel="stylesheet" href="_ds/lollipop-design-system-679df722-fc80-41a0-b664-2c92ff44d874/styles.css">
+<link rel="stylesheet" href="poster.css">
+<link rel="stylesheet" href="doc.css">
+<script src="icons.js"></script>
+<style>
+  .mtools { margin: 6px 0 4px; }
+  .mtool { display: flex; gap: 14px; align-items: flex-start; padding: 11px 0; border-top: 1px solid var(--line-200); }
+  .mtool:first-child { border-top: none; padding-top: 2px; }
+  .mtool .mt-ic { width: 40px; height: 40px; border-radius: 11px; display: flex; align-items: center; justify-content: center; color: #fff; flex: none; }
+  .mtool .mt-ic .ic-svg { width: 21px; height: 21px; }
+  .mtool .mt-b { flex: 1; }
+  .mtool .mt-b .mt-h { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .mtool .mt-b h4 { font-size: 16.5px; font-weight: 700; color: var(--ink-900); margin: 0; }
+  .mtool .mt-b .tag { font-size: 12.5px; font-weight: 600; color: var(--coral-500); }
+  .mtool .mt-b p { font-size: 14px; line-height: 1.42; color: var(--ink-600); margin: 3px 0 0; }
+  .mtool a.open { flex: none; align-self: center; font-size: 12.5px; font-weight: 700; color: var(--blue-600); text-decoration: none; display: inline-flex; align-items: center; gap: 5px; white-space: nowrap; border: 1px solid var(--line-300); border-radius: 999px; padding: 6px 13px; }
+  .mtool a.open:hover { background: var(--blue-50); border-color: var(--blue-300); }
+  .mtool a.open .ic-svg { width: 13px; height: 13px; }
+
+  .seealso { display: flex; gap: 12px; align-items: flex-start; background: var(--blue-50); border: 1px solid var(--blue-100); border-radius: 14px; padding: 13px 16px; margin: 18px 0 12px; }
+  .seealso iconify-icon { color: var(--blue-600); font-size: 20px; flex: none; margin-top: 1px; }
+  .seealso p { margin: 0; font-size: 14px; line-height: 1.5; color: var(--ink-700); }
+  .seealso b { color: var(--ink-900); }
+
+  /* Desk-reference link cards (one-pagers live as separate printable files) */
+  .drefhead { display: flex; align-items: center; gap: 9px; font-size: 13.5px; font-weight: 700; color: var(--ink-700); margin: 18px 0 10px; }
+  .drefhead iconify-icon { color: var(--blue-600); font-size: 18px; }
+  .drefhead .ic-svg { width: 17px; height: 17px; color: var(--blue-600); flex: none; }
+  .deskrefs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 0 0 2px; }
+  .dref { display: flex; align-items: center; gap: 11px; text-decoration: none; background: var(--paper); border: 1px solid var(--line-300); border-radius: 13px; padding: 12px 13px; transition: border-color 140ms var(--ease-out), box-shadow 140ms var(--ease-out), transform 140ms var(--ease-out); }
+  .dref:hover { border-color: var(--blue-300); box-shadow: var(--shadow-sm); transform: translateY(-2px); }
+  .dref .di { width: 34px; height: 34px; border-radius: 9px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .dref .di .ic-svg { width: 18px; height: 18px; color: #fff; }
+  .dref .dtxt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .dref h4 { font-size: 13.5px; font-weight: 700; color: var(--ink-900); margin: 0; line-height: 1.2; }
+  .dref .open { font-size: 11.5px; font-weight: 700; color: var(--blue-600); display: inline-flex; align-items: center; gap: 4px; }
+  .dref .open .ic-svg { width: 12px; height: 12px; }
+</style>
+<meta name="back-portal" content="index.html">
+<script src="back-to-portal.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#FBF8F3"/>
+    <path d="M35 33h30a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7H50l-9 8v-8h-6a7 7 0 0 1-7-7V40a7 7 0 0 1 7-7z" fill="#0085FF"/>
+    <circle cx="44" cy="47" r="2.6" fill="#fff"/>
+    <circle cx="56" cy="47" r="2.6" fill="#fff"/>
+    <path d="M43 53a7 7 0 0 0 14 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  </svg>
+</template>
+<div class="doc">
+
+  <!-- COVER -->
+  <section class="page cover-page" data-screen-label="Cover">
+    <div class="cover-rule"></div>
+    <div class="cover-in">
+      <img class="logo" src="assets/logos/lollipop-mark.png" alt="Lollipop">
+      <p class="cover-eyebrow">For Managers</p>
+      <h1>Onboarding<br>&amp; Best Practices</h1>
+      <p class="tagline">Creating caring workplaces · a field guide for supervisors</p>
+      <p class="blurb">A short, practical handbook for noticing when someone on your team needs support — and responding in a way that helps. Most of it takes seconds to use; keep it close.</p>
+      <div class="cover-meta">
+        <div class="cover-foot"><img src="assets/logos/lollipop-mark.png" alt="">Lollipop Software · Culture Software Solutions, Inc.</div>
+        <div class="cover-faces">
+          <img src="assets/moods/okay.png" alt=""><img src="assets/moods/good.png" alt=""><img src="assets/moods/great.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section class="page" data-screen-label="Contents">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Onboarding &amp; Best Practices</span></div><span>For Managers</span></div>
+    <div class="doc-body">
+      <div class="sec mt0"><h2 style="margin:0">Contents</h2></div>
+      <p class="note" style="margin-top:6px">A short, practical handbook for noticing when someone on your team needs support — and responding in a way that helps. Most of it takes seconds to use; keep it close.</p>
+      <div class="toc" style="margin-top:16px">
+        <div class="toc-row"><span class="n">1</span><span class="t">What Lollipop is</span><span class="pg">p.3</span></div>
+        <div class="toc-row"><span class="n">2</span><span class="t">How it works</span><span class="pg">p.3</span></div>
+        <div class="toc-row"><span class="n">3</span><span class="t">Your role as a manager</span><span class="pg">p.3</span></div>
+        <div class="toc-row"><span class="n">4</span><span class="t">Introducing Lollipop to your team</span><span class="pg">p.4</span></div>
+        <div class="toc-row"><span class="n">5</span><span class="t">Responding to an alert: connect, don't fix</span><span class="pg">p.4</span></div>
+        <div class="toc-row"><span class="n">6</span><span class="t">Examples of support</span><span class="pg">p.5</span></div>
+        <div class="toc-row"><span class="n">7</span><span class="t">Keeping engagement high</span><span class="pg">p.5</span></div>
+        <div class="toc-row"><span class="n">8</span><span class="t">Confidentiality &amp; when to escalate</span><span class="pg">p.5</span></div>
+        <div class="toc-row"><span class="n">9</span><span class="t">Your tools — and how to use them</span><span class="pg">p.6</span></div>
+      </div>
+      <p class="eyebrow-c" style="margin-top:20px">Companion materials — open or print</p>
+      <div class="toc" style="margin-top:6px">
+        <div class="toc-row"><span class="n">→</span><span class="t">Team introduction script — read-aloud for your team meeting</span><span class="pg">§4</span></div>
+        <div class="toc-row"><span class="n">→</span><span class="t">Sample employee introduction email — English &amp; Spanish</span><span class="pg">§4</span></div>
+        <div class="toc-row"><span class="n">→</span><span class="t">Desk references — Active Listening · Body Language · Communication Pitfalls</span><span class="pg">§5</span></div>
+      </div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span></span></div>
+  </section>
+
+  <!-- PAGE 2 — §1, §2, §3 -->
+  <section class="page" data-screen-label="The idea, how it works, your role">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Onboarding &amp; Best Practices</span></div><span>For Managers</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">1</span><h2>What Lollipop is</h2></div>
+      <p class="lead">Lollipop gives you a real-time read on how your team is feeling — and simple, practical ways to connect with anyone having a hard time. Two ideas sit at its heart: people need to be heard, seen, and understood; and small, authentic gestures from a manager have a big impact.</p>
+
+      <div class="sec"><span class="sec-num">2</span><h2>How it works</h2></div>
+      <table class="btable free">
+        <tbody>
+          <tr><td>1 · Check-in</td><td>Team members get a quick text or email asking how they're feeling — a 1–5 mood, optional emotions, and an optional comment, in a few clicks.</td></tr>
+          <tr><td>2 · Alert</td><td>A low score or a comment sends you an instant alert, often with a simple suggestion for how to connect.</td></tr>
+          <tr><td>3 · Connect</td><td>You reach out and offer support. Often a brief, genuine check-in is all it takes.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sec"><span class="sec-num">3</span><h2>Your role as a manager</h2></div>
+      <p>Lollipop works because of you. Four simple habits make all the difference:</p>
+      <ul>
+        <li>Encourage your team to check in — and explain the company uses Lollipop because it cares.</li>
+        <li>Respond to alerts promptly and reach out with genuine care.</li>
+        <li>Talk about Lollipop regularly — in team meetings and one-on-ones.</li>
+        <li>Lead by example and participate yourself.</li>
+      </ul>
+      <div class="cal info"><p><strong>Encourage participation — but never require it.</strong> Some will use it only when they need it; simply knowing it's there makes a difference.</p></div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>3</span></div>
+  </section>
+
+  <!-- PAGE 3 — §4 Introducing, §5 Responding -->
+  <section class="page" data-screen-label="Introducing &amp; responding">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Onboarding &amp; Best Practices</span></div><span>For Managers</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">4</span><h2>Introducing Lollipop to your team</h2></div>
+      <p>How you introduce it sets the tone. Where possible, do it in person at a team meeting and cover four things:</p>
+      <ul>
+        <li><strong>Why</strong> — check-ins so everyone feels seen and supported.</li>
+        <li><strong>How</strong> — a quick text or email; a low response alerts you to reach out.</li>
+        <li><strong>Confidential</strong> — private; shared only with you and HR.</li>
+        <li><strong>Optional</strong> — never required, but if shared, it's seen and it matters.</li>
+      </ul>
+      <div class="drefhead"><iconify-icon icon="lucide:send"></iconify-icon>Tasked with notifying employees yourself? We've written these for you — open, edit, and send:</div>
+      <div class="deskrefs" style="grid-template-columns:repeat(2,1fr)">
+        <a class="dref" href="Team Introduction Script.html">
+          <span class="di" style="background:var(--blue-500)"><iconify-icon icon="lucide:mic"></iconify-icon></span>
+          <span class="dtxt"><h4>Team Introduction Script</h4><span class="open">Read-aloud · Open <iconify-icon icon="lucide:external-link"></iconify-icon></span></span>
+        </a>
+        <a class="dref" href="Employee Introduction Email.html">
+          <span class="di" style="background:var(--positive)"><iconify-icon icon="lucide:mail"></iconify-icon></span>
+          <span class="dtxt"><h4>Employee Intro Email</h4><span class="open">EN/ES · Open <iconify-icon icon="lucide:external-link"></iconify-icon></span></span>
+        </a>
+      </div>
+
+      <div class="sec"><span class="sec-num">5</span><h2>Responding to an alert: connect, don't fix</h2></div>
+      <p>Your goal is to connect, listen, and understand — not to diagnose or solve. Be a bridge to the right help, not the help itself.</p>
+      <ul>
+        <li><strong>Approach</strong> — caring mindset, somewhere private, ask if they'd like to talk.</li>
+        <li><strong>Listen (80/20)</strong> — let them talk ~80% of the time; don't interrupt, ask clarifying questions, restate what you heard.</li>
+        <li><strong>Engage</strong> — show genuine concern; if work-related, offer a next step; if personal, ask how you can help.</li>
+      </ul>
+      <div class="cal warn"><h4><iconify-icon icon="lucide:x"></iconify-icon>What not to do</h4><p>Don't minimize (“that's not so bad”), judge (“why didn't you tell me sooner?”), diagnose, or make it about you. Sometimes the best thing to say is “thanks for trusting me with this.”</p></div>
+      <div class="drefhead"><iconify-icon icon="lucide:bookmark"></iconify-icon>Printable desk references — open, print, and keep them by your desk:</div>
+      <div class="deskrefs">
+        <a class="dref" href="Active Listening Guide.html">
+          <span class="di" style="background:var(--blue-500)"><iconify-icon icon="lucide:ear"></iconify-icon></span>
+          <span class="dtxt"><h4>Active Listening</h4><span class="open">Open <iconify-icon icon="lucide:external-link"></iconify-icon></span></span>
+        </a>
+        <a class="dref" href="Body Language.html">
+          <span class="di" style="background:var(--positive)"><iconify-icon icon="lucide:scan-face"></iconify-icon></span>
+          <span class="dtxt"><h4>Body Language</h4><span class="open">Open <iconify-icon icon="lucide:external-link"></iconify-icon></span></span>
+        </a>
+        <a class="dref" href="Communication Pitfalls.html">
+          <span class="di" style="background:var(--coral-500)"><iconify-icon icon="lucide:message-square-warning"></iconify-icon></span>
+          <span class="dtxt"><h4>Communication Pitfalls</h4><span class="open">Open <iconify-icon icon="lucide:external-link"></iconify-icon></span></span>
+        </a>
+      </div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>4</span></div>
+  </section>
+
+  <!-- PAGE 4 — §6 Support, §7 Engagement, §8 Confidentiality -->
+  <section class="page" data-screen-label="Support, engagement &amp; confidentiality">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Onboarding &amp; Best Practices</span></div><span>For Managers</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">6</span><h2>Examples of support</h2></div>
+      <p>Match support to what someone is experiencing — and celebrate good moments, not just hard ones.</p>
+      <table class="btable free">
+        <tbody>
+          <tr><td>Family emergency or loss</td><td>Remind them of leave policy; send flowers; have leadership make a personal call.</td></tr>
+          <tr><td>Transportation or childcare</td><td>Offer temporary ride-sharing, a schedule change, or work-from-home.</td></tr>
+          <tr><td>Health, overwhelm, or anxiety</td><td>Point to sick-leave, disability options, or the EAP; offer extra breaks or an afternoon off.</td></tr>
+          <tr><td>A win or milestone</td><td>Acknowledge them in a meeting, a handwritten note, or lunch.</td></tr>
+        </tbody>
+      </table>
+
+      <div class="sec"><span class="sec-num">7</span><h2>Keeping engagement high</h2></div>
+      <p>Adoption takes months; consistency turns checking in into a habit. Mention it regularly, respond to alerts quickly, celebrate improvements (when someone's mood lifts, ask what helped), and lean on your resources — leave policies and the EAP are powerful and often underused.</p>
+
+      <div class="sec"><span class="sec-num">8</span><h2>Confidentiality &amp; when to escalate</h2></div>
+      <p>Keep responses and conversations private — never used for discipline, evaluations, or promotions, and never ask about medical conditions or therapy.</p>
+      <div class="cal crit"><h4><iconify-icon icon="lucide:shield-alert"></iconify-icon>When you must escalate</h4><p>Immediately notify HR or the General Manager, per company protocols, if a team member shows signs of harming themselves or others (ask directly), or reports harassment, discrimination, or injury.</p></div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>5</span></div>
+  </section>
+
+  <!-- PAGE 5 — §9 Tools + Key takeaways -->
+  <section class="page" data-screen-label="Your tools &amp; takeaways">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Onboarding &amp; Best Practices</span></div><span>For Managers</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">9</span><h2>Your tools — and how to use them</h2></div>
+      <p>Your Manager Resource Library is reachable right from an alert. Tap a name to open it.</p>
+      <div class="mtools">
+        <div class="mtool">
+          <span class="mt-ic" style="background:var(--coral-500)"><iconify-icon icon="lucide:lightbulb"></iconify-icon></span>
+          <div class="mt-b"><div class="mt-h"><h4>Quick Insights</h4><span class="tag">One-minute actions</span></div>
+            <p>Research-backed micro-behaviors great managers use to build trust. Pick one to try today.</p></div>
+          <a class="open" href="https://www.trylollipop.com/resources/quick-insights" target="_blank" rel="noopener">Open <iconify-icon icon="lucide:external-link"></iconify-icon></a>
+        </div>
+        <div class="mtool">
+          <span class="mt-ic" style="background:var(--blue-500)"><iconify-icon icon="lucide:message-circle"></iconify-icon></span>
+          <div class="mt-b"><div class="mt-h"><h4>Conversation Starters</h4><span class="tag">Open the conversation</span></div>
+            <p>Ready-to-use questions to connect after a check-in. Filter by an emotion or a situation.</p></div>
+          <a class="open" href="https://www.trylollipop.com/conversation-starters-hidden" target="_blank" rel="noopener">Open <iconify-icon icon="lucide:external-link"></iconify-icon></a>
+        </div>
+        <div class="mtool">
+          <span class="mt-ic" style="background:var(--mood-bad)"><iconify-icon icon="lucide:gift"></iconify-icon></span>
+          <div class="mt-b"><div class="mt-h"><h4>Small Authentic Gestures</h4><span class="tag">Show you noticed</span></div>
+            <p>Simple acts of care that help people feel seen. Choose a kind of care, then copy a gesture (no- / low-cost filter built in).</p></div>
+          <a class="open" href="https://www.trylollipop.com/small-authentic-gestures-hidden" target="_blank" rel="noopener">Open <iconify-icon icon="lucide:external-link"></iconify-icon></a>
+        </div>
+        <div class="mtool">
+          <span class="mt-ic" style="background:var(--blue-700)"><iconify-icon icon="lucide:snowflake"></iconify-icon></span>
+          <div class="mt-b"><div class="mt-h"><h4>Meeting Icebreakers</h4><span class="tag">Warm up the room</span></div>
+            <p>Short, safe questions for teams of 4–10. Hit Random 1 or Give Me 3; keep answers to 30–60 seconds.</p></div>
+          <a class="open" href="https://www.trylollipop.com/meeting-icebreakers-hidden" target="_blank" rel="noopener">Open <iconify-icon icon="lucide:external-link"></iconify-icon></a>
+        </div>
+      </div>
+      <p class="note" style="margin-top:4px">Also: Connection Exercises (trust-building activities), Articles &amp; Guides (deeper reading), and the AI CareBot (describe a situation, get thoughtful next steps). Technical issue? Email <strong>support@trylollipop.com</strong>.</p>
+
+      <p class="eyebrow-c" style="margin-top:18px">In a nutshell</p>
+      <div class="cal ok" style="margin-top:6px">
+        <ul style="margin:0">
+          <li>People need to be heard, seen, and understood — small authentic gestures have a big impact.</li>
+          <li>Encourage check-ins, respond promptly, and lead by example.</li>
+          <li>When you connect: listen more than you speak; don't try to fix or diagnose.</li>
+          <li>Keep everything confidential — except a risk of harm, which goes to HR immediately.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>6</span></div>
+  </section>
+
+</div>
+</body>
+</html>

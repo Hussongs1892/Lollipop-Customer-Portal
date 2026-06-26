@@ -1,0 +1,82 @@
+/* ============================================================
+   Lollipop — Color tokens
+   A bright, optimistic, human palette. Lollipop Blue is the
+   anchor; a warm cream paper keeps screens soft; the 5-step
+   mood spectrum (Terrible → Great) is sacred brand equity.
+   ============================================================ */
+
+:root {
+  /* ---- Brand ---- */
+  --blue-50:  #e6f3ff;
+  --blue-100: #c2e2ff;
+  --blue-200: #8fcaff;
+  --blue-300: #54adff;
+  --blue-500: #0085ff;   /* Lollipop Blue — primary */
+  --blue-600: #0a6fd6;
+  --blue-700: #0a5bad;
+
+  /* ---- Coral (the "energy" accent: section heads, active pills) ---- */
+  --coral-100: #ffe1e6;
+  --coral-300: #ff8a9b;
+  --coral-500: #ff4d62;  /* Lollipop Coral */
+  --coral-600: #e63450;
+
+  /* ---- Paper / neutral (warm, cream-leaning) ---- */
+  --cream:     #fbf8f3;  /* app canvas — the signature background */
+  --butter:    #fbefc4;  /* soft yellow header band on the employee app */
+  --paper:     #ffffff;  /* cards / sheets */
+  --ink-900:   #1c1d1f;  /* near-black headings */
+  --ink-700:   #3a3d42;  /* body */
+  --ink-500:   #6b7178;  /* secondary text */
+  --ink-400:   #9aa0a7;  /* muted / captions */
+  --line-200:  #eceae4;  /* hairlines on cream */
+  --line-300:  #e1ded6;  /* card borders */
+  --fill-100:  #f5f3ee;  /* subtle chip / input fill on cream */
+  --fill-200:  #efece5;
+
+  /* ---- Mood spectrum (5-point check-in scale) ---- */
+  --mood-terrible: #ff5658;  /* 1 */
+  --mood-bad:      #f7931d;  /* 2 */
+  --mood-okay:     #ffd84b;  /* 3 */
+  --mood-good:     #a9ee12;  /* 4 */
+  --mood-great:    #309c3f;  /* 5 */
+
+  /* ---- Semantic status ---- */
+  --positive:  #309c3f;
+  --warning:   #f7931d;
+  --critical:  #ff4d62;
+  --info:      #0085ff;
+  --positive-soft: #e7f6ea;
+  --warning-soft:  #fdf0db;
+  --critical-soft: #ffe1e6;
+  --info-soft:     #e6f3ff;
+
+  /* ============================================================
+     Semantic aliases — reach for THESE in components.
+     ============================================================ */
+  --surface-canvas:   var(--cream);
+  --surface-card:     var(--paper);
+  --surface-sunken:   var(--fill-100);
+  --surface-band:     var(--butter);
+  --surface-brand:    var(--blue-500);
+
+  --text-heading:     var(--ink-900);
+  --text-body:        var(--ink-700);
+  --text-secondary:   var(--ink-500);
+  --text-muted:       var(--ink-400);
+  --text-on-brand:    #ffffff;
+  --text-link:        var(--blue-500);
+  --text-accent:      var(--coral-500);
+
+  --border-subtle:    var(--line-200);
+  --border-card:      var(--line-300);
+  --border-strong:    var(--ink-900);
+
+  --action-primary:        var(--blue-500);
+  --action-primary-hover:  var(--blue-600);
+  --action-primary-press:  var(--blue-700);
+  --action-accent:         var(--coral-500);
+  --action-accent-hover:   var(--coral-600);
+
+  --focus-ring:       var(--blue-300);
+}

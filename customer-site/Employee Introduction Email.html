@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sample Employee Introduction Email — Lollipop</title>
+<link rel="stylesheet" href="_ds/lollipop-design-system-679df722-fc80-41a0-b664-2c92ff44d874/styles.css">
+<link rel="stylesheet" href="doc.css">
+<script src="icons.js"></script>
+<style>
+  .ph { background: #FFF3D6; color: var(--ink-900); font-weight: 600; border-radius: 4px; padding: 0 3px; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+
+  .emailcard { background: var(--paper); border: 1px solid var(--line-300); border-radius: 16px; box-shadow: var(--shadow-sm); overflow: hidden; margin: 6px 0 2px; }
+  .emailcard .eh { background: var(--cream); border-bottom: 1px solid var(--line-200); padding: 13px 18px; }
+  .emailcard .eh .erow { display: flex; gap: 9px; font-size: 13.5px; line-height: 1.7; }
+  .emailcard .eh .erow .k { color: var(--ink-400); font-weight: 600; width: 56px; flex: none; }
+  .emailcard .eh .erow .v { color: var(--ink-900); font-weight: 500; }
+  .emailcard .eb { padding: 18px 20px 20px; }
+  .emailcard .eb p { font-size: 14.5px; line-height: 1.6; color: var(--ink-900); margin: 0 0 11px; }
+  .emailcard .eb p:last-child { margin-bottom: 0; }
+  .emailcard .eb ul { margin: 0 0 11px; padding-left: 20px; }
+  .emailcard .eb li { font-size: 14.5px; line-height: 1.55; color: var(--ink-900); margin-bottom: 4px; }
+  .emailcard .eb .sign { margin-top: 14px; }
+
+  .langtab { display: inline-flex; align-items: center; gap: 7px; font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--blue-700); background: var(--blue-50); border: 1px solid var(--blue-100); border-radius: 999px; padding: 5px 13px; }
+
+  @media print { .noprint { display: none !important; } }
+  .toolbar { position: fixed; top: 16px; right: 16px; display: flex; gap: 8px; z-index: 50; }
+  .toolbar button { font-family: inherit; font-size: 13px; font-weight: 700; color: #fff; background: var(--blue-500); border: none; border-radius: 999px; padding: 9px 16px; cursor: pointer; box-shadow: var(--shadow-brand); display: inline-flex; align-items: center; gap: 7px; }
+  .toolbar button:hover { background: var(--blue-600); }
+  .toolbar button .ic-svg { width: 15px; height: 15px; }
+</style>
+<meta name="back-portal" content="index.html">
+<script src="back-to-portal.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#FBF8F3"/>
+    <path d="M35 33h30a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7H50l-9 8v-8h-6a7 7 0 0 1-7-7V40a7 7 0 0 1 7-7z" fill="#0085FF"/>
+    <circle cx="44" cy="47" r="2.6" fill="#fff"/>
+    <circle cx="56" cy="47" r="2.6" fill="#fff"/>
+    <path d="M43 53a7 7 0 0 0 14 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  </svg>
+</template>
+
+<div class="toolbar noprint">
+  <button onclick="window.print()"><iconify-icon icon="lucide:printer"></iconify-icon>Print / Save PDF</button>
+</div>
+
+<div class="doc">
+
+  <!-- PAGE 1 — English -->
+  <section class="page" data-screen-label="Employee Intro Email — English">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Sample Employee Introduction Email</span></div><span>For Managers &amp; HR</span></div>
+    <div class="doc-body">
+      <p class="eyebrow-c">Notifying your team</p>
+      <h1 style="font-size:28px;line-height:1.12;margin:2px 0 8px">A ready-to-send note for your employees</h1>
+      <p class="lead" style="margin-top:0">Send this a few days before the first check-in. Replace the <span class="ph">highlighted</span> parts, keep the tone warm, and feel free to make it your own. A short personal line at the top goes a long way.</p>
+
+      <div style="margin:10px 0 6px"><span class="langtab"><iconify-icon icon="lucide:globe"></iconify-icon>English</span></div>
+
+      <div class="emailcard">
+        <div class="eh">
+          <div class="erow"><span class="k">Subject</span><span class="v">A new way for us to check in — meet Lollipop 💙</span></div>
+          <div class="erow"><span class="k">To</span><span class="v">The <span class="ph">[Team / Company]</span> team</span></div>
+          <div class="erow"><span class="k">From</span><span class="v"><span class="ph">[Your name]</span></span></div>
+        </div>
+        <div class="eb">
+          <p>Hi everyone,</p>
+          <p>I'm excited to share something we're starting at <span class="ph">[Company]</span> called <strong>Lollipop</strong> — a simple, caring way for us to check in on how you're really doing.</p>
+          <p>Here's how it works:</p>
+          <ul>
+            <li><strong>You'll get a quick check-in</strong> by <span class="ph">[text / email]</span> asking how you're feeling. It takes about a minute — pick a mood, add a note if you'd like, and you're done.</li>
+            <li><strong>If you're having a hard time</strong>, it quietly lets me know so I can reach out and support you. No alarms, nothing on your record.</li>
+            <li><strong>What you share stays private</strong> — only your manager and HR can see it, and it's <em>never</em> used for reviews, discipline, or promotions.</li>
+            <li><strong>It's completely optional</strong>, every time. Share when you want to; skip when you don't.</li>
+          </ul>
+          <p>We're doing this for one simple reason: we care how you're doing, and we want to be here for you — in the good moments and the hard ones. I'll be checking in right alongside you.</p>
+          <p>Your first check-in will arrive on <span class="ph">[date]</span>. If you have any questions, reach out to me or <span class="ph">[HR contact name]</span> at <span class="ph">[email]</span> anytime.</p>
+          <p>Thanks for being part of this — it means a lot.</p>
+          <p class="sign">Warmly,<br><span class="ph">[Your name]</span><br><span class="ph">[Title]</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>1</span></div>
+  </section>
+
+  <!-- PAGE 2 — Spanish -->
+  <section class="page" data-screen-label="Employee Intro Email — Spanish">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Sample Employee Introduction Email</span></div><span>For Managers &amp; HR</span></div>
+    <div class="doc-body">
+      <p class="eyebrow-c">Versión en español</p>
+      <h1 style="font-size:28px;line-height:1.12;margin:2px 0 8px">Una nota lista para enviar a tu equipo</h1>
+      <p class="lead" style="margin-top:0">Envíala unos días antes del primer check-in. Reemplaza las partes <span class="ph">resaltadas</span>, mantén un tono cálido y personalízala como prefieras.</p>
+
+      <div style="margin:10px 0 6px"><span class="langtab"><iconify-icon icon="lucide:globe"></iconify-icon>Español</span></div>
+
+      <div class="emailcard">
+        <div class="eh">
+          <div class="erow"><span class="k">Asunto</span><span class="v">Una nueva forma de cuidarnos — te presentamos Lollipop 💙</span></div>
+          <div class="erow"><span class="k">Para</span><span class="v">El equipo de <span class="ph">[Equipo / Empresa]</span></span></div>
+          <div class="erow"><span class="k">De</span><span class="v"><span class="ph">[Tu nombre]</span></span></div>
+        </div>
+        <div class="eb">
+          <p>Hola a todos,</p>
+          <p>Me alegra compartir algo que estamos comenzando en <span class="ph">[Empresa]</span> llamado <strong>Lollipop</strong>, una forma sencilla y cercana de saber cómo te sientes realmente.</p>
+          <p>Así funciona:</p>
+          <ul>
+            <li><strong>Recibirás un check-in rápido</strong> por <span class="ph">[mensaje / correo]</span> preguntando cómo te sientes. Toma alrededor de un minuto.</li>
+            <li><strong>Si estás pasando un momento difícil</strong>, me avisa de forma discreta para poder acercarme y apoyarte.</li>
+            <li><strong>Lo que compartes es privado</strong>: solo tu supervisor y Recursos Humanos pueden verlo, y <em>nunca</em> se usa para evaluaciones, disciplina ni ascensos.</li>
+            <li><strong>Es totalmente opcional</strong>, siempre. Comparte cuando quieras; omítelo cuando no.</li>
+          </ul>
+          <p>Lo hacemos por una razón simple: nos importa cómo estás y queremos estar aquí para ti, en los buenos momentos y en los difíciles. Yo también participaré junto a ti.</p>
+          <p>Tu primer check-in llegará el <span class="ph">[fecha]</span>. Si tienes preguntas, escríbeme a mí o a <span class="ph">[contacto de RR. HH.]</span> en <span class="ph">[correo]</span> cuando quieras.</p>
+          <p>Gracias por ser parte de esto, significa mucho.</p>
+          <p class="sign">Con cariño,<br><span class="ph">[Tu nombre]</span><br><span class="ph">[Cargo]</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>2</span></div>
+  </section>
+
+</div>
+</body>
+</html>

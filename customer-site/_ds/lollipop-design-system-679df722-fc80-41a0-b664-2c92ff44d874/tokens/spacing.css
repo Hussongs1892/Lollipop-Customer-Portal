@@ -1,0 +1,53 @@
+/* ============================================================
+   Lollipop — Spacing, radius, shadow, motion tokens
+   8pt base grid. Generous, friendly radii (Lollipop is round
+   by nature — the logo is a bubble). Shadows are soft and low,
+   never harsh.
+   ============================================================ */
+
+:root {
+  /* ---- Spacing (8pt grid) ---- */
+  --space-0:  0;
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-5:  20px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* ---- Radius (rounded, bubbly) ---- */
+  --radius-xs:   6px;
+  --radius-sm:   10px;
+  --radius-md:   14px;   /* default card / input */
+  --radius-lg:   20px;   /* large cards / sheets */
+  --radius-xl:   28px;   /* hero panels */
+  --radius-pill: 999px;  /* buttons, chips, mood faces */
+
+  /* ---- Shadows (soft, warm-tinted, low) ---- */
+  --shadow-xs:  0 1px 2px rgba(28, 29, 31, 0.05);
+  --shadow-sm:  0 2px 6px rgba(28, 29, 31, 0.06);
+  --shadow-md:  0 6px 18px rgba(28, 29, 31, 0.08);
+  --shadow-lg:  0 16px 40px rgba(28, 29, 31, 0.10);
+  --shadow-brand: 0 8px 24px rgba(0, 133, 255, 0.28);  /* lifted blue buttons */
+
+  /* ---- Borders ---- */
+  --border-width: 1px; /* @kind other */
+  --border-width-strong: 2px; /* @kind other */
+
+  /* ---- Motion ---- */
+  --ease-out:    cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+  --dur-fast:    120ms; /* @kind other */
+  --dur-base:    200ms; /* @kind other */
+  --dur-slow:    360ms; /* @kind other */
+
+  /* ---- Layout ---- */
+  --container-max: 1200px; /* @kind other */
+  --app-width: 390px; /* @kind other */
+}

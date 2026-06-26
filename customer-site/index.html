@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lollipop — Manager &amp; Admin Portal</title>
+<link rel="stylesheet" href="_ds/lollipop-design-system-679df722-fc80-41a0-b664-2c92ff44d874/styles.css">
+<script src="icons.js"></script>
+<style>
+  body { background: var(--cream); font-family: var(--font-brand); margin: 0; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 30px 56px; }
+  .spectrum { height: 10px; background: linear-gradient(90deg, var(--mood-terrible) 0 20%, var(--mood-bad) 20% 40%, var(--mood-okay) 40% 60%, var(--mood-good) 60% 80%, var(--mood-great) 80% 100%); }
+
+  /* ---- Compact horizontal hero ---- */
+  .hero { padding: 38px 0 4px; }
+  .htop { display: flex; align-items: center; gap: 16px; }
+  .htop img { height: 50px; }
+  .htop h1 { font-size: 42px; font-weight: 800; letter-spacing: -0.03em; color: var(--ink-900); margin: 0; line-height: 1; }
+  .hsub { display: flex; align-items: center; justify-content: space-between; gap: 28px; margin-top: 14px; }
+  .hsub p { font-size: 15.5px; color: var(--ink-500); max-width: 660px; margin: 0; line-height: 1.5; }
+  .faces { display: flex; gap: 8px; flex: none; }
+  .faces img { width: 34px; height: 34px; }
+
+  /* ---- Section headers ---- */
+  .group { margin-top: 30px; }
+  .group h2 { font-size: 12.5px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--ink-400); margin: 0 0 13px; display: flex; align-items: center; gap: 12px; }
+  .group h2::after { content: ""; flex: 1; height: 1px; background: var(--line-300); }
+  .group .lede { font-size: 14px; line-height: 1.5; color: var(--ink-500); margin: -4px 0 13px; max-width: 720px; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .grid.three { grid-template-columns: repeat(3, 1fr); }
+
+  /* ---- Compact card ---- */
+  .card { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line-300); border-radius: 16px; padding: 17px 18px; text-decoration: none; box-shadow: var(--shadow-sm); transition: transform 150ms var(--ease-out), box-shadow 150ms var(--ease-out); position: relative; }
+  .card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); text-decoration: none; }
+  .chead { display: flex; align-items: center; gap: 12px; }
+  .card .ic { width: 38px; height: 38px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .card .ic .ic-svg { width: 20px; height: 20px; color: #fff; }
+  .card.blue .ic { background: var(--blue-500); }
+  .card.coral .ic { background: var(--coral-500); }
+  .card.green .ic { background: var(--positive); }
+  .card.amber .ic { background: var(--warning); }
+  .card.purple .ic { background: #7c5cff; }
+  .card h3 { font-size: 16.5px; font-weight: 700; color: var(--ink-900); margin: 0; line-height: 1.2; }
+  .card p { font-size: 13px; line-height: 1.45; color: var(--ink-500); margin: 10px 0 0; flex: 1; }
+  .card .meta { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 14px; }
+  .card .tag { font-size: 12px; font-weight: 700; color: var(--ink-400); }
+  .card .arrow { width: 30px; height: 30px; border-radius: 50%; background: var(--fill-100); display: flex; align-items: center; justify-content: center; color: var(--ink-500); transition: background 150ms, color 150ms; flex: none; }
+  .card:hover .arrow { background: var(--blue-500); color: #fff; }
+  .card.coral:hover .arrow { background: var(--coral-500); }
+  .card.green:hover .arrow { background: var(--positive); }
+  .card.amber:hover .arrow { background: var(--warning); }
+  .card.purple:hover .arrow { background: #7c5cff; }
+  .card .arrow .ic-svg { width: 15px; height: 15px; }
+  .card .ext { position: absolute; top: 15px; right: 16px; font-size: 10.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); display: flex; align-items: center; gap: 4px; }
+  .card .ext .ic-svg { width: 12px; height: 12px; }
+
+  .card .acts { display: flex; gap: 7px; align-items: center; }
+  .card .act { font-size: 12px; font-weight: 700; text-decoration: none; border: 1px solid var(--line-300); border-radius: 999px; padding: 5px 12px; color: var(--ink-600); display: inline-flex; align-items: center; gap: 5px; transition: background 140ms, border-color 140ms, color 140ms; }
+  .card .act:hover { background: var(--fill-100); color: var(--ink-900); }
+  .card .act .ic-svg { width: 12px; height: 12px; }
+  .card .act.pdf { color: #fff; background: var(--blue-600); border-color: var(--blue-600); }
+  .card .act.pdf:hover { background: var(--blue-700); border-color: var(--blue-700); color: #fff; }
+
+  /* ---- Slim Care Assistant strip ---- */
+  .assistant { display: flex; align-items: center; gap: 18px; margin-top: 14px; background: linear-gradient(120deg, var(--blue-500), #0a6fd6 72%, #0a5bad); border-radius: 16px; padding: 16px 20px; text-decoration: none; box-shadow: 0 10px 26px rgba(10,111,214,0.24); transition: transform 160ms var(--ease-out), box-shadow 160ms var(--ease-out); position: relative; overflow: hidden; }
+  .assistant::after { content: ""; position: absolute; right: -30px; top: -50px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+  .assistant:hover { transform: translateY(-2px); box-shadow: 0 16px 34px rgba(10,111,214,0.32); text-decoration: none; }
+  .assistant .face { width: 46px; height: 46px; border-radius: 13px; background: rgba(255,255,255,0.16); display: flex; align-items: center; justify-content: center; flex: none; }
+  .assistant .face img { width: 34px; height: 34px; }
+  .assistant .atext { flex: 1; min-width: 0; z-index: 1; }
+  .assistant .atext h2 { font-size: 19px; font-weight: 800; letter-spacing: -0.01em; color: #fff; margin: 0; display: flex; align-items: center; gap: 10px; }
+  .assistant .atext h2 .ae { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-600); background: #fff; padding: 3px 8px; border-radius: 999px; }
+  .assistant .atext h2::after { display: none; }
+  .assistant .atext p { font-size: 13px; line-height: 1.45; color: rgba(255,255,255,0.92); margin: 5px 0 0; max-width: 760px; }
+  .assistant .cta { flex: none; z-index: 1; display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--blue-600); font-size: 14px; font-weight: 700; padding: 11px 19px; border-radius: 999px; white-space: nowrap; }
+  .assistant:hover .cta { background: var(--cream); }
+  .assistant .cta .ic-svg { width: 17px; height: 17px; }
+  @media (max-width: 720px) { .assistant { flex-direction: column; align-items: flex-start; gap: 14px; text-align: left; } }
+
+  /* ---- Compact video row (5-up) ---- */
+  .vgrid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .vcard { display: flex; flex-direction: column; background: var(--paper); border: 1px solid var(--line-300); border-radius: 14px; overflow: hidden; text-decoration: none; box-shadow: var(--shadow-sm); transition: transform 150ms var(--ease-out), box-shadow 150ms var(--ease-out); }
+  .vcard:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); text-decoration: none; }
+  .vthumb { position: relative; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #0a5bad, #0a6fd6 55%, var(--blue-500)); overflow: hidden; }
+  .vthumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .vthumb::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,29,31,0) 45%, rgba(28,29,31,0.3) 100%); }
+  .vplay { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 38px; height: 38px; border-radius: 50%; background: rgba(255,77,98,0.95); display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 14px rgba(255,77,98,0.4); transition: transform 150ms var(--ease-out); z-index: 1; }
+  .vcard:hover .vplay { transform: translate(-50%, -50%) scale(1.1); }
+  .vplay .ic-svg { width: 17px; height: 17px; color: #fff; margin-left: 2px; }
+  .vbody { padding: 11px 12px 13px; display: flex; flex-direction: column; gap: 3px; }
+  .vbody .vnum { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; color: var(--coral-500); }
+  .vbody h3 { font-size: 13.5px; font-weight: 700; color: var(--ink-900); margin: 0; line-height: 1.25; }
+  .vbody .vmeta { display: flex; align-items: center; gap: 5px; font-size: 11.5px; font-weight: 600; color: var(--ink-400); margin-top: 4px; }
+  .vbody .vmeta .ic-svg { width: 12px; height: 12px; }
+
+  .foot { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--line-300); display: flex; align-items: center; gap: 11px; color: var(--ink-400); font-size: 13.5px; font-weight: 600; }
+  .foot img { height: 24px; }
+
+  /* ---- Print ---- */
+  @media print {
+    @page { margin: 12mm; }
+    * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+    html, body { background: #fff !important; }
+    .wrap { max-width: none; padding: 0; }
+    .spectrum { height: 6px; }
+    .hero { padding: 8px 0 0; break-inside: avoid; break-after: avoid; }
+    .htop img { height: 38px; }
+    .htop h1 { font-size: 30px; }
+    .hsub { margin-top: 9px; }
+    .hsub p { font-size: 12.5px; max-width: none; }
+    .faces img { width: 28px; height: 28px; }
+    .group { margin-top: 18px; break-inside: avoid-page; }
+    .assistant { display: none !important; }
+    .group h2 { font-size: 11.5px; margin-bottom: 10px; break-after: avoid; }
+    .group .lede { font-size: 12px; margin: -1px 0 10px; max-width: none; }
+    .grid, .vgrid { gap: 10px; }
+    .card, .vcard { box-shadow: none !important; transform: none !important; break-inside: avoid; }
+    .card { padding: 13px; border-radius: 11px; }
+    .card p { font-size: 11.5px; }
+    .vbody { padding: 9px 10px 10px; }
+    .vbody h3 { font-size: 12px; }
+    .foot { margin-top: 22px; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="spectrum"></div>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="htop">
+      <img src="assets/logos/lollipop-mark.png" alt="Lollipop">
+      <h1>Manager &amp; Admin Portal</h1>
+    </div>
+    <div class="hsub">
+      <p>One place for everything you need to run Lollipop well — your guides, printable desk references, training videos, and the manager resource tools.</p>
+      <div class="faces">
+        <img src="assets/moods/okay.png" alt=""><img src="assets/moods/good.png" alt=""><img src="assets/moods/great.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- GUIDES -->
+  <div class="group">
+    <h2>Your guides</h2>
+    <div class="grid">
+      <div class="card blue">
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:book-open"></iconify-icon></div><h3>Administrator’s Guide</h3></div>
+        <p>The handbook for the account admin &amp; champion — responsibilities, running the program, and adding or removing employees.</p>
+        <div class="meta"><span class="tag">For Admins · 5 pages</span><span class="acts"><a class="act" href="Administrator's Guide.html">Open</a><a class="act pdf" href="PDFs/Administrator's Guide.pdf" target="_blank" rel="noopener"><iconify-icon icon="lucide:file-down"></iconify-icon>PDF</a></span></div>
+      </div>
+      <div class="card coral">
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:heart"></iconify-icon></div><h3>Onboarding &amp; Best Practices</h3></div>
+        <p>The field guide for supervisors — best practices, responding to alerts, the manager tools, and links to the printable desk references.</p>
+        <div class="meta"><span class="tag">For Managers · 5 pages</span><span class="acts"><a class="act" href="Managers Guide.html">Open</a><a class="act pdf" href="PDFs/Manager Onboarding and Best Practices.pdf" target="_blank" rel="noopener"><iconify-icon icon="lucide:file-down"></iconify-icon>PDF</a></span></div>
+      </div>
+    </div>
+  </div>
+
+  <a class="assistant" href="Care Assistant.html">
+    <span class="face"><img src="assets/moods/great.png" alt=""></span>
+    <span class="atext">
+      <h2>Care Assistant <span class="ae">New · Ask anything</span></h2>
+      <p>Your always-on guide for responding to alerts, navigating tricky conversations, supporting your team, and using the platform — with the right resource tools surfaced as you go.</p>
+    </span>
+    <span class="cta"><iconify-icon icon="lucide:message-circle"></iconify-icon>Start chatting</span>
+  </a>
+
+  <!-- ONE-SHEETS -->
+  <div class="group">
+    <h2>Manager one-sheets</h2>
+    <div class="grid three">
+      <div class="card coral">
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:message-square-warning"></iconify-icon></div><h3>Communication Pitfalls</h3></div>
+        <p>What not to say — five common pitfalls and what to try instead.</p>
+        <div class="meta"><span class="tag">1-page</span><span class="acts"><a class="act" href="Communication Pitfalls.html">Open</a><a class="act pdf" href="PDFs/Communication Pitfalls.pdf" target="_blank" rel="noopener"><iconify-icon icon="lucide:file-down"></iconify-icon>PDF</a></span></div>
+      </div>
+      <div class="card blue">
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:ear"></iconify-icon></div><h3>Active Listening Guide</h3></div>
+        <p>The five habits of active listening, with quick do's for each.</p>
+        <div class="meta"><span class="tag">1-page</span><span class="acts"><a class="act" href="Active Listening Guide.html">Open</a><a class="act pdf" href="PDFs/Active Listening Guide.pdf" target="_blank" rel="noopener"><iconify-icon icon="lucide:file-down"></iconify-icon>PDF</a></span></div>
+      </div>
+      <div class="card green">
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:scan-face"></iconify-icon></div><h3>Body Language</h3></div>
+        <p>Twelve signals to notice and shift — and what to do instead.</p>
+        <div class="meta"><span class="tag">1-page</span><span class="acts"><a class="act" href="Body Language.html">Open</a><a class="act pdf" href="PDFs/Body Language.pdf" target="_blank" rel="noopener"><iconify-icon icon="lucide:file-down"></iconify-icon>PDF</a></span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRAINING VIDEOS -->
+  <div class="group">
+    <h2>Manager training videos</h2>
+    <p class="lede">Short, practical videos — about 12 minutes total — that walk supervisors through their role, responding to alerts, and using the resource library. The perfect first step before launch.</p>
+    <div class="vgrid">
+      <a class="vcard" href="https://youtu.be/1LjeMq_jfLA" target="_blank" rel="noopener">
+        <div class="vthumb"><img src="https://i.ytimg.com/vi/1LjeMq_jfLA/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><span class="vplay"><iconify-icon icon="lucide:play"></iconify-icon></span></div>
+        <div class="vbody"><span class="vnum">Start here</span><h3>Supervisor Introduction</h3><span class="vmeta"><iconify-icon icon="lucide:external-link"></iconify-icon>YouTube</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/RpLInjIdswM" target="_blank" rel="noopener">
+        <div class="vthumb"><img src="https://i.ytimg.com/vi/RpLInjIdswM/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><span class="vplay"><iconify-icon icon="lucide:play"></iconify-icon></span></div>
+        <div class="vbody"><span class="vnum">Video 1</span><h3>How to Show Up When It Matters</h3><span class="vmeta"><iconify-icon icon="lucide:external-link"></iconify-icon>YouTube</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/inFoP-yrvqo" target="_blank" rel="noopener">
+        <div class="vthumb"><img src="https://i.ytimg.com/vi/inFoP-yrvqo/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><span class="vplay"><iconify-icon icon="lucide:play"></iconify-icon></span></div>
+        <div class="vbody"><span class="vnum">Video 2</span><h3>Effective Communication</h3><span class="vmeta"><iconify-icon icon="lucide:external-link"></iconify-icon>YouTube</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/NCgJuUXhXrs" target="_blank" rel="noopener">
+        <div class="vthumb"><img src="https://i.ytimg.com/vi/NCgJuUXhXrs/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><span class="vplay"><iconify-icon icon="lucide:play"></iconify-icon></span></div>
+        <div class="vbody"><span class="vnum">Video 3</span><h3>Preparing for Conversations</h3><span class="vmeta"><iconify-icon icon="lucide:external-link"></iconify-icon>YouTube</span></div>
+      </a>
+      <a class="vcard" href="https://youtu.be/5PCjxElGU4g" target="_blank" rel="noopener">
+        <div class="vthumb"><img src="https://i.ytimg.com/vi/5PCjxElGU4g/hqdefault.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none'"><span class="vplay"><iconify-icon icon="lucide:play"></iconify-icon></span></div>
+        <div class="vbody"><span class="vnum">Video 4</span><h3>Resource Library</h3><span class="vmeta"><iconify-icon icon="lucide:external-link"></iconify-icon>YouTube</span></div>
+      </a>
+    </div>
+  </div>
+
+  <!-- MANAGER RESOURCES (external tools) -->
+  <div class="group">
+    <h2>Manager tools</h2>
+    <div class="grid three">
+      <a class="card coral" href="https://www.trylollipop.com/small-authentic-gestures-hidden" target="_blank" rel="noopener">
+        <span class="ext"><iconify-icon icon="lucide:external-link"></iconify-icon>Tool</span>
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:gift"></iconify-icon></div><h3>Small Authentic Gestures</h3></div>
+        <p>Simple acts of care that help people feel seen — filter by the kind of care, then copy a gesture.</p>
+        <div class="meta"><span class="tag">trylollipop.com</span><span class="arrow"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span></div>
+      </a>
+      <a class="card blue" href="https://www.trylollipop.com/conversation-starters-hidden" target="_blank" rel="noopener">
+        <span class="ext"><iconify-icon icon="lucide:external-link"></iconify-icon>Tool</span>
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:message-circle"></iconify-icon></div><h3>Conversation Starters</h3></div>
+        <p>Ready-to-use questions to connect after a check-in — filter by an emotion or a situation.</p>
+        <div class="meta"><span class="tag">trylollipop.com</span><span class="arrow"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span></div>
+      </a>
+      <a class="card amber" href="https://www.trylollipop.com/resources/quick-insights" target="_blank" rel="noopener">
+        <span class="ext"><iconify-icon icon="lucide:external-link"></iconify-icon>Tool</span>
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:lightbulb"></iconify-icon></div><h3>Quick Insights</h3></div>
+        <p>Research-backed micro-behaviors great managers use to build trust — pick one to try today.</p>
+        <div class="meta"><span class="tag">trylollipop.com</span><span class="arrow"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span></div>
+      </a>
+      <a class="card green" href="https://www.trylollipop.com/connection-exercises-hidden" target="_blank" rel="noopener">
+        <span class="ext"><iconify-icon icon="lucide:external-link"></iconify-icon>Tool</span>
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:users"></iconify-icon></div><h3>Connection Exercises</h3></div>
+        <p>Activities that strengthen trust as a team — filter by group size, purpose, and time.</p>
+        <div class="meta"><span class="tag">trylollipop.com</span><span class="arrow"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span></div>
+      </a>
+      <a class="card purple" href="https://www.trylollipop.com/meeting-icebreakers-hidden" target="_blank" rel="noopener">
+        <span class="ext"><iconify-icon icon="lucide:external-link"></iconify-icon>Tool</span>
+        <div class="chead"><div class="ic"><iconify-icon icon="lucide:snowflake"></iconify-icon></div><h3>Meeting Icebreakers</h3></div>
+        <p>Short, safe questions for teams of 4–10 to warm up the room — Random 1 or Give Me 3.</p>
+        <div class="meta"><span class="tag">trylollipop.com</span><span class="arrow"><iconify-icon icon="lucide:arrow-up-right"></iconify-icon></span></div>
+      </a>
+    </div>
+  </div>
+
+  <div class="foot"><img src="assets/logos/lollipop-mark.png" alt="">Lollipop Software · Culture Software Solutions, Inc. · Creating Caring Workplaces</div>
+</div>
+</body>
+</html>

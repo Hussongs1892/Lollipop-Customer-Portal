@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Administrator's Guide — Lollipop</title>
+<link rel="stylesheet" href="_ds/lollipop-design-system-679df722-fc80-41a0-b664-2c92ff44d874/styles.css">
+<link rel="stylesheet" href="doc.css">
+<link rel="stylesheet" href="appendix.css">
+<script src="icons.js"></script>
+<style>
+  .gpair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; margin-top: 10px; }
+  .gshot { margin: 0; }
+  .gshot img { width: 100%; display: block; border: 1px solid var(--line-300); border-radius: 12px; box-shadow: var(--shadow-sm); }
+  .gshot figcaption { font-size: 13px; color: var(--ink-600); font-weight: 600; margin-top: 9px; display: flex; align-items: center; gap: 8px; line-height: 1.35; }
+  .gnum { width: 24px; height: 24px; border-radius: 50%; background: var(--blue-500); color: #fff; font-weight: 800; font-size: 13px; display: inline-flex; align-items: center; justify-content: center; flex: none; }
+  /* Navigation map */
+  .navwrap { display: grid; grid-template-columns: 212px 1fr; gap: 26px; align-items: start; margin-top: 14px; }
+  .sidebar-mock { background: #fff; border: 1px solid var(--line-300); border-radius: 14px; padding: 12px 9px; box-shadow: var(--shadow-sm); }
+  .sidebar-mock .brand { display: flex; align-items: center; gap: 8px; padding: 4px 8px 10px; margin-bottom: 6px; border-bottom: 1px solid var(--line-300); }
+  .sidebar-mock .brand img { width: 26px; height: 26px; }
+  .sidebar-mock .brand span { font-weight: 800; color: var(--blue-600); font-size: 14px; }
+  .sidebar-mock .nav-i { padding: 6px 10px; border-radius: 8px; color: var(--ink-700); font-weight: 600; font-size: 13px; }
+  .sidebar-mock .nav-i.parent { color: var(--blue-700); display: flex; justify-content: space-between; align-items: center; }
+  .sidebar-mock .nav-i.parent::after { content: "\25BE"; font-size: 10px; color: var(--ink-400); }
+  .sidebar-mock .sub { margin: 3px 0 5px 15px; padding-left: 12px; border-left: 2px solid var(--line-300); display: grid; gap: 3px; }
+  .sidebar-mock .sub .nav-i { font-weight: 500; color: var(--ink-600); padding: 5px 10px; }
+  .sidebar-mock .nav-i.active { background: var(--blue-50); color: var(--blue-700); font-weight: 700; }
+  .findtable { width: 100%; border-collapse: collapse; margin-top: 2px; }
+  .findtable td { padding: 8px 0; border-bottom: 1px solid var(--line-300); vertical-align: top; font-size: 13.5px; line-height: 1.4; }
+  .findtable tr:last-child td { border-bottom: none; }
+  .findtable td:first-child { font-weight: 700; color: var(--ink-900); width: 37%; padding-right: 14px; }
+  .path-chip { font-weight: 700; color: var(--blue-700); white-space: normal; }
+  .path-chip .sep { color: var(--ink-400); font-weight: 700; padding: 0 2px; }
+</style>
+<meta name="back-portal" content="index.html">
+<script src="back-to-portal.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#FBF8F3"/>
+    <path d="M35 33h30a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7H50l-9 8v-8h-6a7 7 0 0 1-7-7V40a7 7 0 0 1 7-7z" fill="#0085FF"/>
+    <circle cx="44" cy="47" r="2.6" fill="#fff"/>
+    <circle cx="56" cy="47" r="2.6" fill="#fff"/>
+    <path d="M43 53a7 7 0 0 0 14 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  </svg>
+</template>
+<div class="doc">
+
+  <!-- COVER -->
+  <section class="page cover-page" data-screen-label="Cover">
+    <div class="cover-rule"></div>
+    <div class="cover-in">
+      <img class="logo" src="assets/logos/lollipop-mark.png" alt="Lollipop">
+      <p class="cover-eyebrow">For Customer Admins</p>
+      <h1>Administrator’s<br>Guide</h1>
+      <p class="tagline">Your quick guide to launching &amp; running Lollipop</p>
+      <p class="blurb">A practical handbook for the admin and champion at your organization — what to expect, the few things we need from you, and how to keep your program running, including adding and removing employees.</p>
+      <div class="cover-meta">
+        <dl class="kv">
+          <dt>For</dt><dd>Customer Admin &amp; Champion</dd>
+          <dt>Version</dt><dd>1.1 · Condensed</dd>
+          <dt>Updated</dt><dd>June 10, 2026</dd>
+        </dl>
+        <div class="cover-faces"><img src="assets/moods/good.png" alt=""><img src="assets/moods/great.png" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 2 — §1 + §2 -->
+  <section class="page" data-screen-label="Overview &amp; inputs">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Administrator’s Guide</span></div><span>For Customer Admins</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">1</span><h2>What Lollipop is &amp; what to expect</h2></div>
+      <p class="lead">Lollipop sends each employee one quick check-in — “How are you feeling today?” — by SMS, email, Slack, or WhatsApp, with a 1–5 mood and optional comment. A low score or comment instantly alerts that person's supervisor, who reaches out: <strong>check-in → alert → connect</strong>.</p>
+      <div class="cal info"><h4><iconify-icon icon="lucide:hand-heart"></iconify-icon>Your part is light</h4><p>Our Customer Success team handles all technical setup — account, roster, configuration, go-live. Once we have your spreadsheet and schedule, launch is typically <strong>24–48 hours</strong> away, with no app or login for employees. From you: the five inputs below, help introducing it, and supervisors who respond to alerts.</p></div>
+
+      <div class="sec"><span class="sec-num">2</span><h2>What we need from you — the 5 inputs</h2></div>
+      <div class="steps-list">
+        <div class="step"><div class="n">1</div><div class="b"><p><strong>An employee spreadsheet.</strong> Your people by team — name, mobile and/or email, supervisor. We send a template; you fill it, we upload it.</p></div></div>
+        <div class="step"><div class="n">2</div><div class="b"><p><strong>Your check-in schedule.</strong> Day(s), time(s), and time zone(s). Twice-weekly drives the highest participation; weekly is a fine start.</p></div></div>
+        <div class="step"><div class="n">3</div><div class="b"><p><strong>Your administrators.</strong> Who should have admin access — a primary champion <strong>and a backup</strong>.</p></div></div>
+        <div class="step"><div class="n">4</div><div class="b"><p><strong>Your resources &amp; links.</strong> Your EAP, crisis lines, and internal well-being resources to show employees and managers.</p></div></div>
+        <div class="step"><div class="n">5</div><div class="b"><p><strong>Monthly report recipients.</strong> Who should receive the monthly engagement report.</p></div></div>
+      </div>
+      <p class="note">The champion is the single biggest driver of success — always name a backup. (One customer's participation collapsed to 17% without one.)</p>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span></span></div>
+  </section>
+
+  <!-- PAGE 3 — §3 + §4 -->
+  <section class="page" data-screen-label="What we handle &amp; roster">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Administrator’s Guide</span></div><span>For Customer Admins</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">3</span><h2>What we handle for you</h2></div>
+      <p>Everything below is on us — you never touch setup or configuration.</p>
+      <ul>
+        <li>Creating your account and <strong>uploading and validating your roster</strong> from the spreadsheet you send.</li>
+        <li>Setting up teams and mapping supervisors to their people for alert routing.</li>
+        <li>Configuring channels, alert thresholds, trigger words, follow-ups, and the delivery schedule (including time zones and international SMS).</li>
+        <li>Activating the account at go-live, confirming the first round delivers, and sending your first monthly report.</li>
+      </ul>
+      <div class="cal info"><h4><iconify-icon icon="lucide:mail-check"></iconify-icon>One small IT step</h4><p>So nothing lands in spam, ask IT to whitelist our sending domains: <strong>@lollipopco.co</strong> and <strong>@trylollipop.com</strong>.</p></div>
+
+      <div class="sec"><span class="sec-num">4</span><h2>Keeping your roster current</h2></div>
+      <p>As people join and leave, keep your roster current. Two easy options:</p>
+      <ul>
+        <li><strong>Option A — send us a spreadsheet.</strong> Email an updated list of new and departed employees and we'll make the changes. If you'd rather not manage it in the app, this is all you do.</li>
+        <li><strong>Option B — do it in the app.</strong> Add one person under Employees → <strong>Add Employee</strong>; for five or more, re-run the upload (it adds rows without deleting anyone). To remove someone, move them to the <strong>Inactive List</strong> — check-ins stop, history is kept, and they can be reactivated.</li>
+      </ul>
+      <div class="cal ok"><h4><iconify-icon icon="lucide:calendar-clock"></iconify-icon>We'll remind you every month</h4><p>Each month we automatically email your admin to send us anyone who has <strong>departed</strong> and any <strong>new employees and their supervisor</strong> — so your roster and alert routing stay accurate.</p></div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span></span></div>
+  </section>
+
+  <!-- PAGE 3b — Activating Slack -->
+  <section class="page" data-screen-label="Activate Slack">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Administrator’s Guide</span></div><span>For Customer Admins</span></div>
+    <div class="doc-body">
+      <p class="eyebrow-c">If your team checks in on Slack</p>
+      <div class="sec mt0"><h2 style="margin:0">Activating Slack</h2></div>
+      <p style="margin-top:14px">If your check-ins go through Slack, a Slack <strong>workspace admin</strong> needs to authorize the Lollipop app once — it only takes a moment, and <strong>check-ins won't send on Slack until it's done</strong>. We'll remind you a day or two before launch. Two steps:</p>
+      <div class="gpair">
+        <figure class="gshot">
+          <img src="assets/guide-img/slack-install.png" alt="Lollipop admin Integrations page with the Install Slack button highlighted">
+          <figcaption><span class="gnum">1</span>In Lollipop: <strong>Settings → Integrations</strong>, then click <strong>Install Slack</strong>.</figcaption>
+        </figure>
+        <figure class="gshot">
+          <img src="assets/guide-img/slack-allow.png" alt="Slack app-permission screen with the Allow button highlighted">
+          <figcaption><span class="gnum">2</span>In Slack: choose your workspace, then click <strong>Allow</strong>.</figcaption>
+        </figure>
+      </div>
+      <div class="cal info"><h4><iconify-icon icon="lucide:info"></iconify-icon>Good to know</h4><p>Slack may note “App is not approved by Slack” — that's expected for a private workspace app like this and is safe to approve. Once you click Allow, you're all set; your team starts receiving check-ins on launch day.</p></div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span></span></div>
+  </section>
+
+  <!-- PAGE 4 — §5 + §6 -->
+  <section class="page" data-screen-label="Introduce &amp; dashboard">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Administrator’s Guide</span></div><span>For Customer Admins</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">5</span><h2>Introducing Lollipop to your team</h2></div>
+      <p>How you introduce Lollipop sets the tone. A brief in-person mention at a team meeting helps. Cover four things:</p>
+      <ul>
+        <li><strong>Why</strong> — well-being check-ins so everyone feels seen and heard.</li>
+        <li><strong>How</strong> — a quick check-in by text, email, Slack, or WhatsApp; a low response alerts their manager.</li>
+        <li><strong>Confidential</strong> — shared only with their manager and HR; never used for discipline or evaluations.</li>
+        <li><strong>Optional</strong> — “you're never obligated to share, but if you do, it's seen and it matters.”</li>
+      </ul>
+      <div class="linklist">
+        <div class="linkrow"><span class="lic"><iconify-icon icon="lucide:file-text"></iconify-icon></span><div class="lbody"><b>Employee Introduction Letter</b><span>We provide it — customize and send before launch.</span></div><a class="go" href="https://docs.google.com/document/d/1BmpfmC5RFZN3UzHn2tVFVybYonTo7DMg/edit?usp=drive_link&amp;ouid=112121891906355391328&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">English <iconify-icon icon="lucide:external-link"></iconify-icon></a><a class="go" href="https://docs.google.com/document/d/1fQLzdFcN-Uwyt2uL1LRUJ1K2BdelER4S/edit?usp=drive_link&amp;ouid=112121891906355391328&amp;rtpof=true&amp;sd=true" target="_blank" rel="noopener">Spanish <iconify-icon icon="lucide:external-link"></iconify-icon></a></div>
+      </div>
+
+      <div class="sec"><span class="sec-num">6</span><h2>Your dashboard at a glance</h2></div>
+      <p>You get a live read on how your organization is feeling — we'll walk you through it at kickoff:</p>
+      <table class="btable free">
+        <tbody>
+          <tr><td>Engagement</td><td>The share of employees checking in. Low engagement with a healthy mood means a participation nudge — not that something's wrong.</td></tr>
+          <tr><td>Average Mood &amp; Distribution</td><td>The 1–5 team average (below 3.5 / 5 warrants a look) and the spread across Terrible → Great.</td></tr>
+          <tr><td>By Team &amp; Trends</td><td>Teams side by side, mood over time, and individual responses with follow-ups.</td></tr>
+        </tbody>
+      </table>
+      <p class="note">Set the date filter to the current month, or the numbers reflect a different range.</p>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span></span></div>
+  </section>
+
+  <!-- PAGE 4b — Finding your way around -->
+  <section class="page" data-screen-label="Finding your way around">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Administrator’s Guide</span></div><span>For Customer Admins</span></div>
+    <div class="doc-body">
+      <p class="eyebrow-c">Quick reference</p>
+      <div class="sec mt0"><h2 style="margin:0">Finding your way around</h2></div>
+      <p style="margin-top:12px">Most settings live in the left sidebar. A few items are <strong>nested</strong> — click a parent to expand it. The most common one people miss: <strong>Delivery Schedules</strong> lives <em>inside</em> Teams, not on its own.</p>
+      <div class="navwrap">
+        <div class="sidebar-mock">
+          <div class="brand"><img src="assets/logos/lollipop-mark.png" alt=""><span>Lollipop</span></div>
+          <div class="nav-i">Dashboard</div>
+          <div class="nav-i">Resources</div>
+          <div class="nav-i">Follow Ups</div>
+          <div class="nav-i">Employees</div>
+          <div class="nav-i parent">Teams</div>
+          <div class="sub">
+            <div class="nav-i">Dashboard</div>
+            <div class="nav-i active">Delivery Schedules</div>
+            <div class="nav-i">Responses</div>
+            <div class="nav-i">Imports</div>
+          </div>
+          <div class="nav-i">All Responses</div>
+          <div class="nav-i">Reports</div>
+          <div class="nav-i">Locations</div>
+          <div class="nav-i">Admins</div>
+          <div class="nav-i">Settings</div>
+        </div>
+        <table class="findtable">
+          <tbody>
+            <tr><td>When check-ins send</td><td><span class="path-chip">Teams<span class="sep">›</span>Delivery Schedules<span class="sep">›</span>Add Delivery Schedule</span> — set days &amp; time per team, then Save.</td></tr>
+            <tr><td>Add an employee</td><td><span class="path-chip">Employees<span class="sep">›</span>Add Employee</span>. For 5+, re-run the upload under <span class="path-chip">Teams<span class="sep">›</span>Imports</span>.</td></tr>
+            <tr><td>Remove someone</td><td><span class="path-chip">Employees</span> — open the person and move them to the <strong>Inactive List</strong> (history is kept).</td></tr>
+            <tr><td>See responses &amp; scores</td><td><span class="path-chip">All Responses</span>, or per team under <span class="path-chip">Teams<span class="sep">›</span>Responses</span>.</td></tr>
+            <tr><td>Open alerts to act on</td><td><span class="path-chip">Follow Ups</span>.</td></tr>
+            <tr><td>Monthly &amp; trend reports</td><td><span class="path-chip">Reports</span>.</td></tr>
+            <tr><td>Add an admin or supervisor</td><td><span class="path-chip">Admins</span>.</td></tr>
+            <tr><td>Employee resource links</td><td><span class="path-chip">Resources</span>.</td></tr>
+            <tr><td>Connect Slack · channels · thresholds</td><td><span class="path-chip">Settings<span class="sep">›</span>Integrations</span> and <span class="path-chip">Settings<span class="sep">›</span>Check Ins</span>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="cal info"><h4><iconify-icon icon="lucide:info"></iconify-icon>Don't see the nested items?</h4><p>If clicking <strong>Teams</strong> doesn't expand the sub-menu, your login may be a supervisor-only role. Admin rights are needed to see the full Teams menu — your Customer Success contact can adjust this.</p></div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span></span></div>
+  </section>
+
+  <!-- PAGE 5 — §7 + §8 -->
+  <section class="page" data-screen-label="Confidentiality, billing &amp; support">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Administrator’s Guide</span></div><span>For Customer Admins</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num">7</span><h2>Confidentiality &amp; what goes to HR</h2></div>
+      <p>Trust is the foundation of the program. Responses are shared only with the employee's supervisor and select HR / People Ops contacts; they are <strong>never</strong> used for discipline, evaluation, promotion, or monitoring; and participation is voluntary — employees may opt out at any time.</p>
+      <h4 class="subb">Route these to HR — not Lollipop</h4>
+      <p>Medical details, and concerns about pay, benefits, policy, harassment, discrimination, or injury should go directly to your named HR contact.</p>
+      <div class="cal crit"><h4><iconify-icon icon="lucide:shield-alert"></iconify-icon>The one exception</h4><p>If someone may harm themselves or others, the supervisor asks directly and immediately notifies HR or the General Manager, following your protocols.</p></div>
+
+      <div class="sec"><span class="sec-num">8</span><h2>Billing &amp; support</h2></div>
+      <p><strong>Billing.</strong> Your subscription is billed through Stripe, per employee (or per location) depending on your plan. Choose monthly or annual (annual invoiced up front); your first invoice issues at go-live. We'll send your checkout link and apply any agreed promotion.</p>
+      <p><strong>Support.</strong> For questions or technical issues, use the in-platform help or email <strong>support@trylollipop.com</strong> — we respond within one business day. Your Customer Success contact is your go-to for anything onboarding- or program-related.</p>
+      <div class="cal ok"><p><strong>That's it.</strong> Send the five inputs, introduce it to your team, and respond to alerts with care. We'll handle the rest and check in after launch and each month.</p></div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span></span></div>
+  </section>
+
+</div>
+</body>
+</html>

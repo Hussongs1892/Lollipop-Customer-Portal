@@ -1,0 +1,44 @@
+/* ============================================================
+   Lollipop — Typography tokens
+   Poppins carries the brand: rounded, warm, confident. Headings
+   are heavy (700/800) and often colored (Blue or Coral). Body
+   stays at 400–500. Source Serif is reserved for the editorial
+   "Workforce Intelligence Report" voice only.
+   ============================================================ */
+
+:root {
+  /* ---- Families ---- */
+  --font-brand:  "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-body:   "Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif:  "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-mono:   ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* ---- Weights ---- */
+  --fw-regular:  400; /* @kind other */
+  --fw-medium:   500; /* @kind other */
+  --fw-semibold: 600; /* @kind other */
+  --fw-bold:     700; /* @kind other */
+  --fw-black:    800; /* @kind other */
+
+  /* ---- Type scale (rem @ 16px base) ---- */
+  --fs-display:  3.5rem;   /* 56 — hero / "How do you feel today?" */
+  --fs-h1:       2.5rem;   /* 40 — page titles ("Dashboard") */
+  --fs-h2:       2rem;     /* 32 — section titles */
+  --fs-h3:       1.5rem;   /* 24 — card titles */
+  --fs-h4:       1.25rem;  /* 20 — sub-heads */
+  --fs-lg:       1.125rem; /* 18 — lead / large body */
+  --fs-body:     1rem;     /* 16 — default body */
+  --fs-sm:       0.875rem; /* 14 — secondary */
+  --fs-xs:       0.75rem;  /* 12 — captions / eyebrows */
+
+  /* ---- Line heights ---- */
+  --lh-tight:    1.05; /* @kind other */
+  --lh-snug:     1.2; /* @kind other */
+  --lh-normal:   1.5; /* @kind other */
+  --lh-relaxed:  1.65; /* @kind other */
+
+  /* ---- Letter spacing ---- */
+  --ls-tight:    -0.02em; /* @kind other */
+  --ls-normal:   0; /* @kind other */
+  --ls-eyebrow:  0.12em; /* @kind other */
+}

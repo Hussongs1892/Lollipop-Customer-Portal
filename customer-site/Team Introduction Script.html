@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Introduction Script — Lollipop</title>
+<link rel="stylesheet" href="_ds/lollipop-design-system-679df722-fc80-41a0-b664-2c92ff44d874/styles.css">
+<link rel="stylesheet" href="doc.css">
+<script src="icons.js"></script>
+<style>
+  /* Script-specific blocks */
+  .meta-row { display: flex; flex-wrap: wrap; gap: 10px; margin: 2px 0 4px; }
+  .pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; color: var(--ink-700); background: var(--paper); border: 1px solid var(--line-300); border-radius: 999px; padding: 5px 12px; }
+  .pill .ic-svg { width: 14px; height: 14px; color: var(--blue-600); }
+
+  .agenda { width: 100%; border-collapse: collapse; margin: 4px 0 2px; }
+  .agenda td { padding: 7px 10px; border-top: 1px solid var(--line-200); font-size: 14px; color: var(--ink-700); vertical-align: top; }
+  .agenda tr:first-child td { border-top: none; }
+  .agenda td.t { font-weight: 700; color: var(--ink-900); white-space: nowrap; width: 1%; }
+  .agenda td.m { text-align: right; color: var(--coral-500); font-weight: 700; white-space: nowrap; width: 1%; }
+
+  .say { position: relative; background: var(--paper); border: 1px solid var(--line-300); border-left: 4px solid var(--blue-500); border-radius: 12px; padding: 12px 16px 13px 18px; margin: 9px 0; }
+  .say .lbl { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; color: var(--blue-600); margin-bottom: 5px; }
+  .say .lbl .ic-svg { width: 14px; height: 14px; }
+  .say p { font-size: 15px; line-height: 1.5; color: var(--ink-900); margin: 0; font-style: italic; }
+  .say p + p { margin-top: 8px; }
+
+  .four { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; margin: 8px 0 2px; }
+  .fcard { background: var(--paper); border: 1px solid var(--line-300); border-radius: 13px; padding: 12px 14px; }
+  .fcard .fh { display: flex; align-items: center; gap: 9px; margin-bottom: 5px; }
+  .fcard .fi { width: 30px; height: 30px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex: none; }
+  .fcard .fi .ic-svg { width: 16px; height: 16px; color: #fff; }
+  .fcard h4 { font-size: 14.5px; font-weight: 700; color: var(--ink-900); margin: 0; }
+  .fcard p { font-size: 13px; line-height: 1.42; color: var(--ink-500); margin: 0; }
+  .fcard p .qq { color: var(--ink-900); font-style: italic; }
+
+  .qa { margin: 4px 0 2px; }
+  .qa .qi { padding: 9px 0; border-top: 1px solid var(--line-200); }
+  .qa .qi:first-child { border-top: none; }
+  .qa .qq { font-size: 14px; font-weight: 700; color: var(--ink-900); margin: 0 0 3px; }
+  .qa .aa { font-size: 13.5px; line-height: 1.45; color: var(--ink-500); margin: 0; }
+
+  @media print { .noprint { display: none !important; } }
+  .toolbar { position: fixed; top: 16px; right: 16px; display: flex; gap: 8px; z-index: 50; }
+  .toolbar button { font-family: inherit; font-size: 13px; font-weight: 700; color: #fff; background: var(--blue-500); border: none; border-radius: 999px; padding: 9px 16px; cursor: pointer; box-shadow: var(--shadow-brand); display: inline-flex; align-items: center; gap: 7px; }
+  .toolbar button:hover { background: var(--blue-600); }
+  .toolbar button .ic-svg { width: 15px; height: 15px; }
+</style>
+<meta name="back-portal" content="index.html">
+<script src="back-to-portal.js"></script>
+</head>
+<body>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <rect width="100" height="100" fill="#FBF8F3"/>
+    <path d="M35 33h30a7 7 0 0 1 7 7v14a7 7 0 0 1-7 7H50l-9 8v-8h-6a7 7 0 0 1-7-7V40a7 7 0 0 1 7-7z" fill="#0085FF"/>
+    <circle cx="44" cy="47" r="2.6" fill="#fff"/>
+    <circle cx="56" cy="47" r="2.6" fill="#fff"/>
+    <path d="M43 53a7 7 0 0 0 14 0" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+  </svg>
+</template>
+
+<div class="toolbar noprint">
+  <button onclick="window.print()"><iconify-icon icon="lucide:printer"></iconify-icon>Print / Save PDF</button>
+</div>
+
+<div class="doc">
+
+  <!-- PAGE 1 -->
+  <section class="page" data-screen-label="Team Introduction Script — page 1">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Team Introduction Script</span></div><span>For Managers</span></div>
+    <div class="doc-body">
+      <p class="eyebrow-c">Introducing Lollipop to your team</p>
+      <h1 style="font-size:30px;line-height:1.1;margin:2px 0 8px">A few words at your next team meeting</h1>
+      <p class="lead" style="margin-top:0">How you introduce Lollipop sets the tone for how your team uses it. This is a ready-to-read script for a brief, in-person introduction — about five minutes near the top of a regular team meeting. Make it your own; say it in your own voice.</p>
+
+      <div class="meta-row">
+        <span class="pill"><iconify-icon icon="lucide:clock"></iconify-icon>~5 minutes</span>
+        <span class="pill"><iconify-icon icon="lucide:users"></iconify-icon>Whole team, in person</span>
+        <span class="pill"><iconify-icon icon="lucide:calendar"></iconify-icon>At or just before launch</span>
+      </div>
+
+      <div class="cal info" style="margin:10px 0 14px"><p><strong>Before you start:</strong> keep it warm and short. The goal isn't to explain every feature — it's to help people understand <em>why</em> the company is doing this, and that taking part is genuinely up to them.</p></div>
+
+      <div class="sec"><span class="sec-num" style="font-size:14px"><iconify-icon icon="lucide:play" style="font-size:15px"></iconify-icon></span><h2>Open with the why</h2></div>
+      <div class="say">
+        <span class="lbl"><iconify-icon icon="lucide:quote"></iconify-icon>Say something like</span>
+        <p>"I want to take a couple of minutes to tell you about something we're starting called Lollipop. It's a simple way for the company to check in on how everyone's doing — not your work, but <em>you</em>. We care about how this team is feeling, and this helps me be a better support to each of you."</p>
+      </div>
+
+      <div class="sec"><span class="sec-num" style="font-size:14px"><iconify-icon icon="lucide:list-checks" style="font-size:15px"></iconify-icon></span><h2>Cover four things</h2></div>
+      <div class="four">
+        <div class="fcard">
+          <div class="fh"><span class="fi" style="background:var(--blue-500)"><iconify-icon icon="lucide:heart"></iconify-icon></span><h4>Why</h4></div>
+          <p>Regular well-being check-ins so everyone feels seen and heard — and so I can offer support when it's needed. <span class="qq">"We're doing this because we care how you're doing."</span></p>
+        </div>
+        <div class="fcard">
+          <div class="fh"><span class="fi" style="background:var(--positive)"><iconify-icon icon="lucide:smartphone"></iconify-icon></span><h4>How</h4></div>
+          <p>A quick check-in arrives by text or email — a mood and an optional note, in a few clicks. A low response simply lets me know to reach out. <span class="qq">"It takes about a minute."</span></p>
+        </div>
+        <div class="fcard">
+          <div class="fh"><span class="fi" style="background:var(--blue-700)"><iconify-icon icon="lucide:lock"></iconify-icon></span><h4>Confidential</h4></div>
+          <p>What you share stays private — between you, me, and HR. It's never used for reviews, discipline, or promotions. <span class="qq">"This is about support, never evaluation."</span></p>
+        </div>
+        <div class="fcard">
+          <div class="fh"><span class="fi" style="background:var(--coral-500)"><iconify-icon icon="lucide:hand-heart"></iconify-icon></span><h4>Optional</h4></div>
+          <p>You're never obligated to share. But if you do, it's seen, it matters, and we'll respond thoughtfully. <span class="qq">"No pressure — it's here when you want it."</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>1</span></div>
+  </section>
+
+  <!-- PAGE 2 -->
+  <section class="page" data-screen-label="Team Introduction Script — page 2">
+    <div class="phead"><div class="l"><img src="assets/logos/lollipop-mark.png" alt=""><span class="doctitle">Team Introduction Script</span></div><span>For Managers</span></div>
+    <div class="doc-body">
+      <div class="sec"><span class="sec-num" style="font-size:14px"><iconify-icon icon="lucide:message-circle-heart" style="font-size:15px"></iconify-icon></span><h2>Make it personal</h2></div>
+      <p>One or two honest sentences here matter more than anything scripted. Tell your team you'll be taking part too, and that you mean it.</p>
+      <div class="say">
+        <span class="lbl"><iconify-icon icon="lucide:quote"></iconify-icon>Say something like</span>
+        <p>"I'll be checking in right alongside you — this isn't something I'm asking you to do that I won't. If you ever get a check-in and you're having a rough day, it's completely okay to say so. That's exactly what it's for."</p>
+        <p>"And if something's going on that you'd rather talk about directly, my door is open. You don't need to wait for a check-in."</p>
+      </div>
+
+      <div class="sec"><span class="sec-num" style="font-size:14px"><iconify-icon icon="lucide:flag" style="font-size:15px"></iconify-icon></span><h2>Close with an invitation</h2></div>
+      <div class="say">
+        <span class="lbl"><iconify-icon icon="lucide:quote"></iconify-icon>Say something like</span>
+        <p>"You'll see your first check-in soon. Give it a try when it comes — it really does take a minute. Thanks, everyone. I'm glad we're doing this together."</p>
+      </div>
+
+      <div class="sec"><span class="sec-num" style="font-size:14px"><iconify-icon icon="lucide:messages-square" style="font-size:15px"></iconify-icon></span><h2>If someone asks…</h2></div>
+      <div class="qa">
+        <div class="qi"><p class="qq">"Who sees my answers?"</p><p class="aa">Only me as your manager, and HR. They're never shared with the wider team, and never used for performance reviews, discipline, or promotion decisions.</p></div>
+        <div class="qi"><p class="qq">"Do I have to do it?"</p><p class="aa">No — it's completely optional, every time. Some people check in often, some only when they need to. Either is fine.</p></div>
+        <div class="qi"><p class="qq">"What happens if I say I'm not doing well?"</p><p class="aa">I'll get a quiet heads-up and reach out to see how I can support you. No alarm, no record against you — just a check-in from me.</p></div>
+        <div class="qi"><p class="qq">"How long does it take?"</p><p class="aa">About a minute. You pick how you're feeling, optionally add a note, and you're done.</p></div>
+        <div class="qi"><p class="qq">"Is this tracking my productivity?"</p><p class="aa">No. It asks how you're <em>feeling</em>, not what you're producing. It exists to help us support each other, nothing else.</p></div>
+      </div>
+
+      <div class="cal ok" style="margin-top:12px"><p><strong>That's all it takes.</strong> A short, sincere introduction — the why, the how, that it's confidential and optional — plus your own genuine note that you're in it too. That's what turns a new tool into something your team actually trusts.</p></div>
+    </div>
+    <div class="pfoot"><span class="ccw">Lollipop · Creating Caring Workplaces</span><span>2</span></div>
+  </section>
+
+</div>
+</body>
+</html>
